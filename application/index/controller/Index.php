@@ -6,6 +6,6 @@ class Index extends Controller
 {
     public function index()
     {
-        return view('table-datagrid         ');
+        return view('table-datagrid');
     }
 }
