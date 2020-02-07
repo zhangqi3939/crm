@@ -52,4 +52,13 @@ class RbacModel extends Model
             ->find();
         return $sql;
     }
+    //删除token，退出登录
+    public function deleteToken($channel){
+        $token = $this->getTokenFromHttp();
+        $t_token = time().'';
+        //var_dump($t_token);die;
+        //$this->db->where('token',$token)->where('channel',$channel)->update('token',array('token'=>$t_token));
+        $result = DB::name('token')->where('CHANNEL',$channel)->update(array('TOKEN'=>$t_token));
+        return $result;
+    }
 }
